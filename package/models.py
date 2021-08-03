@@ -14,8 +14,7 @@ class user(db.Model,UserMixin):
     email_address=db.Column(db.String(length=50),unique=True,nullable=False)
     password_hash=db.Column(db.String(length=60),nullable=False)
     
-    
-
+  
     @property
     def password(self):
         return self.password

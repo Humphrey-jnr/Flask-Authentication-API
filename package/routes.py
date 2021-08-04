@@ -15,9 +15,9 @@ def home_page():
     return render_template('home.html')
 
 
-@app.route('/explore')
-def explore_page():
-    return render_template('explore.html')
+@app.route('/settings')
+def settings_page():
+    return render_template('settings.html')
 
 @app.route('/register',methods=['GET','POST'])
 def register_page():
@@ -46,7 +46,7 @@ def login_page():
         ):
             login_user(attempted_user)
             flash(f'Success! You are logged in as: {attempted_user.username}', category='success')
-            return redirect(url_for('explore_page'))
+            return redirect(url_for('settings_page'))
         else:
             flash('Username and password are not match! Please try again', category='danger')
 
